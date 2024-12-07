@@ -1,0 +1,124 @@
+/* 页面标题样式 */
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    color: #086788;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* 容器样式 */
+  .bookshelf-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  /* 卡片样式 */
+  .bookshelf-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .book-cover img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .book-details {
+    margin-bottom: 1rem;
+  }
+  
+  .book-title {
+    font-size: 1.2rem;
+    color: #086788;
+    margin: 0.5rem 0;
+  }
+  
+  .book-author {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* 操作按钮 */
+  .book-actions {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+  }
+  
+  .book-actions .btn {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .book-actions .btn-info {
+    background-color: #086788;
+  }
+  
+  .book-actions .btn-info:hover {
+    background-color: #074c63;
+  }
+  
+  .book-actions .btn-danger {
+    background-color: #dc3545;
+  }
+  
+  .book-actions .btn-danger:hover {
+    background-color: #c82333;
+  }
+  
+  /* 空书架提示信息 */
+  .empty-message {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #555;
+    margin-top: 2rem;
+  }
+
+  .search-bar {
+    margin: 1em 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-input {
+    width: 300px;
+    padding: 0.5em;
+    margin-right: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .btn-search {
+    padding: 0.5em 1em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-search:hover {
+    background-color: #0056b3;
+  }
+  
+  

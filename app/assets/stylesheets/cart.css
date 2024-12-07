@@ -1,0 +1,120 @@
+/* 页面标题 */
+h1 {
+    font-size: 2rem;
+    color: #086788;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* 表格容器 */
+  .cart-table-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow-x: auto;
+  }
+  
+  /* 表格样式 */
+  .cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart-table th,
+  .cart-table td {
+    text-align: left;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .cart-table th {
+    background-color: #086788;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .cart-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .cart-table td {
+    color: #333;
+  }
+  
+  /* 数量输入框 */
+  .quantity-input {
+    width: 50px;
+    padding: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  /* 按钮样式 */
+  .btn {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  
+  .btn-small {
+    padding: 0.3rem 0.8rem;
+  }
+  
+  .btn-info {
+    background-color: #086788;
+  }
+  
+  .btn-info:hover {
+    background-color: #074c63;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+  }
+  
+  .btn-primary {
+    background-color: #28a745;
+  }
+  
+  .btn-primary:hover {
+    background-color: #218838;
+  }
+  
+  /* 总价样式 */
+  .cart-summary {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .cart-summary p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .cart-summary .btn-primary {
+    display: inline-block;
+    margin-top: 1rem;
+  }
+  
+  /* 空购物车提示 */
+  .empty-cart-message {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #555;
+    margin-top: 2rem;
+  }
+  

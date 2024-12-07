@@ -1,0 +1,82 @@
+<%= stylesheet_link_tag "books", "data-turbo-track": "reload" %>
+
+<h1>Books</h1>
+
+<%= form_with(url: books_path, method: :get, local: true) do %>
+<style>
+    /* 搜索栏样式 */
+    .search-bar {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .search-input {
+      flex: 1;
+      background-color: #ffffff;
+      color: #333;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .btn-search {
+      background-color: #086788;
+      color: #ffffff;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-search:hover {
+      background-color: #074c63;
+    }
+  </style>
+  <div class="search-bar">
+    <%= text_field_tag :query, params[:query], placeholder: "Search books...", class: "search-input" %>
+    <%= submit_tag "Search", class: "btn btn-search" %>
+  </div>
+<% end %>
+
+<% if can?(:create, Book) %>
+  <%= link_to 'Add New Book', new_book_path, class: 'btn btn-primary' %>
+<% end %>
+
+<div class="books-container">
+  <% if @books.any? %>
+    <% @books.each do |book| %>
+      <div class="book-card">
+        <div class="book-image">
+          <% if book.cover_image.attached? %>
+            <%= image_tag(book.cover_image, alt: book.title) %>
+          <% else %>
+            <%= image_tag("default.jpg", alt: "Default Cover") %>
+          <% end %>
+        </div>
+        <div class="book-details">
+          <h2 class="book-title"><%= book.title %></h2>
+          <p class="book-author">by <%= book.author %></p>
+          <p class="book-description"><%= truncate(book.description, length: 100) %></p>
+          <p class="book-price">$<%= number_to_currency(book.price, unit: "") %></p>
+          <div class="book-actions">
+            <%= link_to 'View', book_path(book), class: 'btn btn-info' %>
+            <% if can?(:update, book) %>
+              <%= link_to 'Edit', edit_book_path(book), class: 'btn btn-warning' %>
+            <% end %>
+            <% if can?(:destroy, book) %>
+              <%= button_to 'Delete', book_path(book), method: :delete, data: { turbo: false, confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <p>No books found.</p>
+  <% end %>
+</div>

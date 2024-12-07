@@ -1,0 +1,107 @@
+/* 标题样式 */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #086788;
+  text-align: center;
+}
+
+/* 表单容器 */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 错误提示框 */
+.error-explanation {
+  background-color: #f8d7da;
+  color: #842029;
+  border: 1px solid #f5c2c7;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 5px;
+}
+
+.error-explanation h2 {
+  margin-bottom: 0.5rem;
+}
+
+.error-explanation ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+
+/* 表单分组 */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+/* 表单标签 */
+.form-label {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+/* 输入框 */
+.form-control {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.form-control:focus {
+  border-color: #086788;
+  box-shadow: 0 0 4px rgba(8, 103, 136, 0.5);
+  outline: none;
+}
+
+/* 文件选择框 */
+.form-control-file {
+  font-size: 0.9rem;
+}
+
+/* 预览图片 */
+.cover-preview {
+  display: block;
+  max-width: 100px;
+  max-height: 150px;
+  margin-top: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* 文件下载链接 */
+.current-file {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #086788;
+}
+
+/* 提交按钮 */
+.form-actions .btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #086788;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-actions .btn:hover {
+  background-color: #074c63;
+  transform: scale(1.05);
+}

@@ -1,0 +1,28 @@
+<%= stylesheet_link_tag "order_details", "data-turbo-track": "reload" %>
+<h1>Order Details</h1>
+
+<div class="order-summary">
+  <p><strong>Order ID:</strong> <%= @order.id %></p>
+  <p><strong>Total Price:</strong> <%= number_to_currency(@order.total_price) %></p>
+</div>
+
+<div class="order-details-container">
+  <% @order.order_items.each do |item| %>
+    <div class="order-item">
+      <div class="book-cover">
+        <% if item.book.cover_image.attached? %>
+          <%= image_tag item.book.cover_image, alt: "Cover for #{item.book.title}" %>
+        <% else %>
+          <%= image_tag "default_book.jpg", alt: "Default Cover" %>
+        <% end %>
+      </div>
+      <div class="book-info">
+        <p class="book-title"><strong>Title:</strong> <%= item.book.title %></p>
+        <p class="book-author"><strong>Author:</strong> <%= item.book.author %></p>
+        <p class="book-price"><strong>Price:</strong> <%= number_to_currency(item.price) %></p>
+        <p class="book-quantity"><strong>Quantity:</strong> <%= item.quantity %></p>
+        <p class="book-total"><strong>Total:</strong> <%= number_to_currency(item.price * item.quantity) %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

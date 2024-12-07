@@ -1,0 +1,45 @@
+<%= stylesheet_link_tag "books_show", "data-turbo-track": "reload" %>
+<div class="book-details-container">
+  <h1 class="book-title"><%= @book.title %></h1>
+
+  <div class="book-details">
+    <p><strong>Author:</strong> <%= @book.author %></p>
+    <p><strong>Description:</strong> <%= @book.description %></p>
+    <p><strong>Price:</strong> $<%= number_to_currency(@book.price, unit: "") %></p>
+  </div>
+
+  <div class="book-cover">
+    <% if @book.cover_image.attached? %>
+      <%= image_tag @book.cover_image, alt: "Cover Image for #{@book.title}" %>
+    <% else %>
+      <p>No cover image available.</p>
+    <% end %>
+  </div>
+
+  <div class="book-actions">
+    <% if @has_purchased %>
+      <p class="purchase-message">You have purchased this book.</p>
+      <% if @book.file_path.attached? %>
+        <%= link_to 'Read Book', rails_blob_path(@book.file_path, disposition: 'inline'), class: 'book-btn btn-success' %>
+        <%= link_to 'Download Book', rails_blob_path(@book.file_path, disposition: 'attachment'), class: 'book-btn btn-secondary' %>
+      <% else %>
+        <p class="file-unavailable">No file available for this book.</p>
+      <% end %>
+    <% else %>
+      <%= button_to 'Buy Now', buy_now_book_path(@book), method: :post, class: 'book-btn btn-primary' %>
+
+      <% unless @in_cart %>
+        <%= button_to 'Add to Cart', cart_items_path(book_id: @book.id), method: :post, class: 'book-btn btn-secondary' %>
+      <% else %>
+        <p class="cart-message">This book is already in your cart.</p>
+      <% end %>
+    <% end %>
+
+    <% unless @in_bookshelf %>
+      <%= button_to 'Add to Bookshelf', bookshelves_path(book_id: @book.id), method: :post, class: 'book-btn btn-secondary' %>
+    <% else %>
+      <p class="bookshelf-message">This book is already in your bookshelf.</p>
+    <% end %>
+  </div>
+
+</div>

@@ -1,0 +1,53 @@
+<%= stylesheet_link_tag "orders", "data-turbo-track": "reload" %>
+
+<h1>Your Orders</h1>
+
+<%= form_with(url: orders_path, method: :get, local: true) do %>
+  <div class="search-bar">
+    <%= text_field_tag :query, params[:query], placeholder: "Search orders by book title...", class: "search-input" %>
+    <%= submit_tag "Search", class: "btn btn-search" %>
+  </div>
+<% end %>
+
+<div class="orders-table-container">
+  <table class="orders-table">
+    <thead>
+      <tr>
+        <th>Cover</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Price</th>
+        <th>Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @orders.any? %>
+        <% @orders.each do |order| %>
+          <% order.order_items.each do |item| %>
+            <tr>
+              <td>
+                <% if item.book.cover_image.attached? %>
+                  <%= image_tag item.book.cover_image, alt: "Cover for #{item.book.title}", class: "book-cover" %>
+                <% else %>
+                  <%= image_tag "default_book.jpg", alt: "Default Cover", class: "book-cover" %>
+                <% end %>
+              </td>
+              <td><%= item.book.title %></td>
+              <td><%= item.book.author %></td>
+              <td><%= number_to_currency(item.price * item.quantity) %></td>
+              <td><%= order.created_at.strftime("%B %d, %Y") %></td>
+              <td>
+                <%= link_to "View Details", order_path(order), class: "btn btn-info btn-small" %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+      <% else %>
+        <tr>
+          <td colspan="6" class="no-orders">No orders found.</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

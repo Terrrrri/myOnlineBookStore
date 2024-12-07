@@ -1,0 +1,118 @@
+/* 页面标题 */
+h1 {
+    font-size: 2rem;
+    color: #086788;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* 搜索栏样式 */
+  .search-bar {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  
+  .search-input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .btn-search {
+    background-color: #086788;
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-search:hover {
+    background-color: #074c63;
+  }
+  
+  /* 表格容器 */
+  .orders-table-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow-x: auto;
+  }
+  
+  /* 表格样式 */
+  .orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .orders-table th,
+  .orders-table td {
+    text-align: left;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .orders-table th {
+    background-color: #086788;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .orders-table td {
+    color: #333;
+    vertical-align: middle;
+  }
+  
+  /* 商品封面图片样式 */
+  .book-cover {
+    width: 50px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 鼠标悬停高亮表格行 */
+  .orders-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* 按钮样式 */
+  .btn {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-small {
+    padding: 0.3rem 0.8rem;
+  }
+  
+  .btn-info {
+    background-color: #086788;
+  }
+  
+  .btn-info:hover {
+    background-color: #074c63;
+  }
+  
+  /* 无订单提示 */
+  .no-orders {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+  }
+  

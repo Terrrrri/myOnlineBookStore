@@ -1,0 +1,80 @@
+/* 页面标题 */
+h1 {
+    font-size: 2rem;
+    color: #086788;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* 订单摘要样式 */
+  .order-summary {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .order-summary p {
+    margin: 0.5rem 0;
+  }
+  
+  .order-summary strong {
+    color: #086788;
+  }
+  
+  /* 订单详情容器 */
+  .order-details-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  /* 单个订单项样式 */
+  .order-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .order-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* 商品封面图片样式 */
+  .book-cover img {
+    width: 80px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 商品信息样式 */
+  .book-info {
+    flex: 1;
+  }
+  
+  .book-title,
+  .book-author,
+  .book-price,
+  .book-quantity,
+  .book-total {
+    font-size: 1rem;
+    color: #333;
+    margin: 0.3rem 0;
+  }
+  
+  .book-title strong,
+  .book-author strong,
+  .book-price strong,
+  .book-quantity strong,
+  .book-total strong {
+    color: #086788;
+  }
+  

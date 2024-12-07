@@ -1,0 +1,105 @@
+/* 引入字体 */
+@font-face {
+    font-family: 'Parkinsans';
+    src: url('/assets/fonts/Parkinsans.woff2') format('woff2');
+  }
+  
+  /* 通用样式 */
+  body {
+    font-family: 'Parkinsans', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* 导航栏样式 */
+  nav {
+    background-color: #086788;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .nav-link:hover {
+    color: #07a0c3;
+  }
+  
+  .btn {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-cart {
+    background-color: #baabbd;
+    color: #333;
+  }
+  
+  .btn-cart:hover {
+    background-color: #9f838c;
+  }
+  
+  .btn-logout, .btn-login, .btn-signup {
+    background-color: #8d7471;
+    color: #fff;
+  }
+  
+  .btn-logout:hover, .btn-login:hover, .btn-signup:hover {
+    background-color: #9f838c;
+  }
+  
+  /* 购物车样式 */
+  .cart-count {
+    font-size: 0.9rem;
+    color: #07a0c3;
+    font-weight: bold;
+  }
+  
+  /* 用户问候 */
+  .user-greeting {
+    font-size: 0.9rem;
+    margin-left: 1rem;
+    color: #fff;
+  }
+  
+  .search-bar {
+    margin: 1em 0;
+  }
+  
+  .search-input {
+    width: 300px;
+    padding: 0.5em;
+    margin-right: 0.5em;
+  }
+  
+  .btn-search {
+    padding: 0.5em 1em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-search:hover {
+    background-color: #0056b3;
+  }
+  

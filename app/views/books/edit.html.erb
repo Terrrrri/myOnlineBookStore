@@ -1,0 +1,61 @@
+<%= stylesheet_link_tag "books_form_edit", "data-turbo-track": "reload" %>
+
+<h1><%= @book.new_record? ? 'Add New Book' : 'Edit Book' %></h1>
+
+<div class="form-container">
+  <%= form_with model: @book, local: true, multipart: true, html: { class: "book-edit-form" } do |f| %>
+    
+    <% if @book.errors.any? %>
+      <div class="error-explanation">
+        <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+        <ul>
+          <% @book.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :title, class: "form-label" %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :author, class: "form-label" %>
+      <%= f.text_field :author, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :price, class: "form-label" %>
+      <%= f.number_field :price, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description, class: "form-label" %>
+      <%= f.text_area :description, rows: 5, class: "form-control" %>
+    </div>
+
+
+    <div class="form-group">
+      <%= f.label :cover_image, class: "form-label" %>
+      <%= f.file_field :cover_image, class: "form-control-file" %>
+      <% if @book.cover_image.attached? %>
+        <p class="current-image">Current Cover:</p>
+        <%= image_tag @book.cover_image, class: "cover-preview" %>
+      <% end %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :file_path, "Book File (PDF)", class: "form-label" %>
+      <%= f.file_field :file_path, class: "form-control-file" %>
+      <% if @book.file_path.attached? %>
+        <p class="current-file">Current File: <%= link_to "Download", rails_blob_path(@book.file_path, disposition: "attachment") %></p>
+      <% end %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit @book.new_record? ? 'Add Book' : 'Save Changes', class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,70 @@
+<%= stylesheet_link_tag "bookshelf", "data-turbo-track": "reload" %>
+<h1>Your Bookshelf</h1>
+
+<%= form_with(url: bookshelves_path, method: :get, local: true) do %>
+<style>
+    /* 搜索栏样式 */
+    .search-bar {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .search-input {
+      flex: 1;
+      background-color: #ffffff;
+      color: #333;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .btn-search {
+      background-color: #086788;
+      color: #ffffff;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-search:hover {
+      background-color: #074c63;
+    }
+  </style>
+  <div class="search-bar">
+    <%= text_field_tag :query, params[:query], placeholder: "Search bookshelf by title or author...", class: "search-input" %>
+    <%= submit_tag "Search", class: "btn btn-search" %>
+  </div>
+<% end %>
+
+<div class="bookshelf-container">
+  <% if @bookshelves.any? %>
+    <% @bookshelves.each do |bookshelf| %>
+      <div class="bookshelf-card">
+        <div class="book-cover">
+          <% if bookshelf.book.cover_image.attached? %>
+            <%= image_tag bookshelf.book.cover_image, alt: "Cover for #{bookshelf.book.title}" %>
+          <% else %>
+            <%= image_tag "default_book.jpg", alt: "Default Cover" %>
+          <% end %>
+        </div>
+        <div class="book-details">
+          <h2 class="book-title"><%= bookshelf.book.title %></h2>
+          <p class="book-author">by <%= bookshelf.book.author %></p>
+        </div>
+        <div class="book-actions">
+          <%= link_to 'View', book_path(bookshelf.book), class: 'btn btn-info' %>
+          <%= button_to 'Remove', bookshelf_path(bookshelf), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <p>Your bookshelf is empty.</p>
+  <% end %>
+</div>

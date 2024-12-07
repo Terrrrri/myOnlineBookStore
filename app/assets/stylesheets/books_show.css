@@ -1,0 +1,104 @@
+/* 标题样式 */
+.book-title {
+    font-size: 2rem;
+    color: #086788;
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* 书籍详情容器 */
+  .book-details-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* 作者、描述和价格样式 */
+  .book-details {
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1rem;
+  }
+  
+  .book-details strong {
+    font-weight: bold;
+    color: #086788;
+  }
+  
+  /* 封面图片样式 */
+  .book-cover img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+  }
+  
+  /* 操作按钮容器 */
+  .book-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  /* 操作按钮样式（仅限书籍详情页面） */
+  .book-actions .book-btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    width: 200px;
+  }
+  
+  .book-actions .btn-primary {
+    background-color: #086788;
+  }
+  
+  .book-actions .btn-primary:hover {
+    background-color: #074c63;
+  }
+  
+  .book-actions .btn-secondary {
+    background-color: #6c757d;
+  }
+  
+  .book-actions .btn-secondary:hover {
+    background-color: #5a6268;
+  }
+  
+  .book-actions .btn-success {
+    background-color: #28a745;
+  }
+  
+  .book-actions .btn-success:hover {
+    background-color: #218838;
+  }
+  
+  /* 提示信息 */
+  .purchase-message,
+  .bookshelf-message,
+  .cart-message {
+    font-size: 1rem;
+    color: #007bff;
+    margin-top: 1rem;
+  }
+  
+  .file-unavailable {
+    font-size: 0.9rem;
+    color: #dc3545;
+    margin-top: 0.5rem;
+  }
+  
